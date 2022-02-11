@@ -1,5 +1,5 @@
 # sha-256
-with sha-256 some numbers in csx file, find the number
+#with sha-256 some numbers in csx file, find the number
 [passwords.csv](https://github.com/Mj078e/sha-256/files/8047036/passwords.csv)
 
 import hashlib
