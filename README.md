@@ -10,16 +10,16 @@ num = list()
 idd = list()
 names = list()
 
-# az 0000 ta 9999 miad tolid mikone va to ye list mirize
+# from 0000 to 9999 Produces and dumps them into a list
 for numbers in range(10000):
     number = "{}".format(numbers).zfill(4)
     num.append(number)
 
-# adad haye toye list adad 0000 ta 9999 ro tabdil be hash mikone
+# The numbers in the list of numbers are turned into sha-256 and thrown into another list
 code = [hashlib.sha256(i.encode()).hexdigest() for i in num]
 
 
-# baz kardan list va joda kardan ozv ha va rikhtanshon to ye list
+# Open the file and separate the members of the list and put each member in a separate list
 with open('passwords.csv') as f:
     ffile = csv.reader(f)
     for line in ffile:
@@ -30,10 +30,10 @@ with open('passwords.csv') as f:
             idd.append(a)
 
 
-# num = list adad 0000 ta 9999
-# code = list hash 0000 ta 9999
-# idd = list hash password ha hast
-# names = list esm haye toye file password hast
+# num = list numbers 0000 to 9999
+# code = list hash 0000 to 9999
+# idd = list hash passwords 
+# names = list names in file password
 
 
 # all_code  = keys:code , value:num
